@@ -39,3 +39,22 @@ If we go with the manual way of running these commands, we can run one command a
 Running manually is not a great way and not a right approach to handle. 
 
 The right approach to handle ansible is using PLAYBOOKS ( ansible playbook: ansible scripts )
+
+To do automation using ANSIBLE, we achieve it using PLAYBOOKS. Playbooks are written using YAML. 
+
+> Leanring YAML is very Easy
+    YAML is all about 
+        * Dictionary: A key with single value is referred as Dictionary
+                        a: 10 
+        * List: A key with multiple values is referred as a List 
+                        courses: 
+                           - python
+                           - java
+                           - nodejs
+
+> In ansible, what is a playbook ?
+    1) A playbook is nothing but a list of plays 
+    2) A play is nothing but a list of tasks
+    3) A task is nothing but a list of actions 
+
+All the playbooks or yaml files should end with an extension as `.yml or .yaml`
