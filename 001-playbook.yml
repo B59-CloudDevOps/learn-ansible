@@ -10,7 +10,7 @@
         msg: "Hello, Ansible Playbooks!"
 
 - name: play2
-  hosts: de                           # host group name 
+  hosts: dev                           # host group name 
   tasks:
     - name: task2 of play 1 
       ansible.builtin.debug:
