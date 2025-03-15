@@ -28,3 +28,14 @@ https://pypi.org/project/ansible/
 
 Ansible is all about modules ( from version 2.8, we are referring them as collections ),
 
+If we go with the manual way of running these commands, we can run one command at a time.
+
+> In our case, we neeed to unstasll nginx, start the service and download the packages
+
+    $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321  -m ansible.builtin.package nginx
+    $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321  -m ansible.builtin.systemd_service nginx
+    $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321  -m  ansible.builtin.get_url http://syxzz/d
+
+Running manually is not a great way and not a right approach to handle. 
+
+The right approach to handle ansible is using PLAYBOOKS ( ansible playbook: ansible scripts )
