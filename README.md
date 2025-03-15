@@ -20,7 +20,11 @@ https://pypi.org/project/ansible/
 
 ### Running ansible commands manually:
 
-    $ ansible -i inventoryFileName all -e ansible_user=ec2-user -e ansible_password=DevOps321  -m ansible.builtin.shell -a uptime
+> If we execute the commands manually, we can execture one command at a time.
+
+    $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321  -m ansible.builtin.shell -a uptime
+    $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321  -m ansible.builtin.ping
+
 
 Ansible is all about modules ( from version 2.8, we are referring them as collections ),
 
