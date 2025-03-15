@@ -8,3 +8,10 @@
     - name: task2 of play 1 
       ansible.builtin.debug:
         msg: "Hello, Ansible Playbooks!"
+
+- name: play2
+  hosts: de                           # host group name 
+  tasks:
+    - name: task2 of play 1 
+      ansible.builtin.debug:
+        msg: "Ansible is an awesome product"
