@@ -10,3 +10,9 @@
     - name: Printing variables
       ansible.builtin.debug:
         msg: "{{ URL }}"
+
+    - name: Printing local variables
+      ansible.builtin.debug:
+        msg: "Value of the task variable is {{ URL }}"
+      vars:                                # Task level variables
+        URL: "task.google.com"  
