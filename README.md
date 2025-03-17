@@ -66,3 +66,7 @@ All the playbooks or yaml files should end with an extension as `.yml or .yaml`
 ### Variable precendence in ansible
 
     local variables > play variables 
+
+In ansible, if you attempt to use a variable which is node decalred, then it returns an error.
+    > CLIURL' is undefined < 
+
