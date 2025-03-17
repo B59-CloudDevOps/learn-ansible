@@ -7,4 +7,4 @@
 
     - name: Printing uptime output
       ansible.builtin.debug: 
-        msg: "{{ OUT }}"
+        msg: "{{ OUT.stdout }} and the exit code is {{ OUT.rc }}"
