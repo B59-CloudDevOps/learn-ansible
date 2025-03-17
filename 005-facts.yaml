@@ -1,6 +1,6 @@
 - name: Demo on using facts
   hosts: all                                # host group name 
-  gather_facts: no
+  # gather_facts: no
   tasks:
     - name: Printing OS Version and Flavor
       ansible.builtin.debug: 
