@@ -1,0 +1,8 @@
+- name: Printing secrets
+  hosts: all                                # host group name 
+  vars:                                     # Play level variables
+    DBPASS: "DevOps321"          
+  tasks:
+    - name: Printing Secret
+      ansible.builtin.debug:
+        msg: "Value of the pass {{ DBPASS }}"
