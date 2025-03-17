@@ -1,6 +1,7 @@
 - name: Demo on installing package
   hosts: all 
   gather_facts: no
+  become: yes                            # Run the task as root: Privilege Escalation
   tasks:
     - name: Installing nginx
       ansible.builtin.package:
