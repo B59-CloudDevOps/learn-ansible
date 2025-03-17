@@ -1,4 +1,4 @@
-- name: Demo on tashs
+- name: Demo on tasks
   hosts: all 
   gather_facts: no
   tasks:
