@@ -1,9 +1,12 @@
 - name: Demo on vars 
   hosts: all                           # host group name 
-  vars:
-    URL: "play.google.com"
+  vars:                                # Play level variables
+    URL: "play.google.com"          
   tasks:
-    - name: Printing variables
+    - name: Printing play variable
       ansible.builtin.debug:
         msg: "Value of the url {{ URL }}"
       
+    - name: Printing variables
+      ansible.builtin.debug:
+        msg: "{{ URL }}"
