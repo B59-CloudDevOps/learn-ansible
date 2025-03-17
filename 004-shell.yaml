@@ -1,0 +1,5 @@
+- name: Demo on using shell module 
+  hosts: all                                # host group name 
+  tasks:
+    - name: Running uptime command
+      ansible.builtin.shell: uptime
