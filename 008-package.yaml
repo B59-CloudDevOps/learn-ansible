@@ -8,7 +8,7 @@
         name: nginx
         state: present
 
-    - name: Starting nginx
+    - name: Restarting nginx
       ansible.builtin.service:
         name: nginx
         state: restarted
