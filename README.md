@@ -70,3 +70,5 @@ All the playbooks or yaml files should end with an extension as `.yml or .yaml`
 In ansible, if you attempt to use a variable which is node decalred, then it returns an error.
     > CLIURL' is undefined < 
 
+How to gather the facts of the nodes mentioned on the inventory:
+    $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ansible.builtin.gather_facts

@@ -1,0 +1,6 @@
+- name: Demo on using facts
+  hosts: all                                # host group name 
+  tasks:
+    - name: Printing OS Version and Flavor
+      ansible.builtin.debug: 
+        msg: "Current node flavor is {{ ansible_distribution }} and version is {{ ansible_distribution_version }}"
