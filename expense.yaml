@@ -1,5 +1,5 @@
 - name: Expense Playbook To Configure {{ component }}
-  hosts: {{ component}}
+  hosts: "{{ component }}"
   become: yes
   roles:
     - "{{ component }}"
