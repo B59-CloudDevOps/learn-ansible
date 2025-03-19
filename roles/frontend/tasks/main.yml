@@ -27,7 +27,7 @@
     dest: "{{ component_path }}"
     remote_src: yes
 
-- name: Restarting {{ compomnent }} service
+- name: Restarting {{ component }} service
   ansible.builtin.service:
     name: nginx
     state: restarted
