@@ -43,4 +43,12 @@
   community.general.npm:
     path: "{{ app_dir }}"
 
+- name: Schema Injection
+  community.mysql.mysql_db:
+    name: all
+    state: import
+    target: /app/schema/backend.sql 
+    login_host: 172.31.38.24
+    login_user: root
+    login_password: ExpenseApp@1
 
