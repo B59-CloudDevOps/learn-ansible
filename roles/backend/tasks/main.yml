@@ -35,12 +35,12 @@
     remote_src: yes
 
 - name: Installing mysql client
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: mysql-server
     state: present
 
 - name: Installing pre-req package for schema injection
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: python3-PyMySQL
     state: present
 
