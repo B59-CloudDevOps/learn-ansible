@@ -43,6 +43,7 @@
   ansible.builtin.pip:
     name: 
       - PyMySQL
+      - cryptography
     executable: pip3.11
 
 - name: Generating {{ component }} artifacts
