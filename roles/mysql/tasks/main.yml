@@ -6,4 +6,8 @@
     name: mysql-server
     state: present
   
-  
+- name: Restarting {{ compomnent }} service
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
