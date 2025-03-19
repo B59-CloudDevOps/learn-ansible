@@ -41,7 +41,7 @@
 
 - name: Installing pre-req package for schema injection
   ansible.builtin.package:
-    name: PyMySQL
+    name: python3-PyMySQL
     state: present
 
 - name: Generating {{ component }} artifacts
