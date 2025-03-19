@@ -16,7 +16,7 @@
     path: "{{ component_path }}"
     state: absent
 
-- name: Creating htmp dir for {{ component }}
+- name: Creating html dir for {{ component }}
   ansible.builtin.file:
     path: "{{ component_path }}"
     state: directory
