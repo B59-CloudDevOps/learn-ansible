@@ -40,9 +40,10 @@
     state: present
 
 - name: Installing pre-req package for schema injection
-  ansible.builtin.dnf:
-    name: python3-PyMySQL
+  ansible.builtin.pip:
+    name: PyMySQL
     state: present
+  executable: pip3.11
 
 - name: Generating {{ component }} artifacts
   community.general.npm:
