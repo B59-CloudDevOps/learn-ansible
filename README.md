@@ -74,3 +74,35 @@ How to gather the facts of the nodes mentioned on the inventory:
     $ ansible -i inv all  -e ansible_user=ec2-user -e ansible_password=DevOps321 -m ansible.builtin.gather_facts
 
 >>> If a playbook has 5 tasks, task 1,2,3,4,5 in order, what will happen if the task 3 fails? Will the test of the tasks get's executed? 
+
+Running Playbooks organized through ROLES is the pattern and this way we know whihc playbook owns which files and variables and this ROLES has a specific structure which holds the files.
+
+Roles Structure : 
+
+```
+roles/
+    common/               # this hierarchy represents a "role"
+        tasks/            #
+            main.yml      #  <-- tasks file can include smaller files if warranted
+        handlers/         #
+            main.yml      #  <-- handlers file
+        templates/        #  <-- files for use with the template resource
+            ntp.conf.j2   #  <------- templates end in .j2
+        files/            #
+            bar.txt       #  <-- files for use with the copy resource
+            foo.sh        #  <-- script files for use with the script resource
+        vars/             #
+            main.yml      #  <-- variables associated with this role
+        defaults/         #
+            main.yml      #  <-- default lower priority variables for this role
+        meta/             #
+            main.yml      #  <-- role dependencies
+```
+
+Here are the top five reasons to use Ansible roles in simple terms:
+
+    1) Keeps Things Organized – Roles break big, messy playbooks into smaller, cleaner parts, making them easier to manage.
+    2) Easy to Reuse – You can use the same role in multiple projects, saving time and effort.
+    3) Makes Scaling Simple – Roles help apply the same setup to many servers without extra work.
+    4) Team-Friendly – Different team members can work on different roles separately without causing issues.
+    5) Pre-Made Roles Exist – You can find ready-to-use roles online (like on Ansible Galaxy) instead of building everything from scratch.
