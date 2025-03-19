@@ -41,7 +41,8 @@
 
 - name: Installing pre-req package for schema injection
   ansible.builtin.pip:
-    name: PyMySQL
+    name: 
+      - python3-PyMySQL
     state: present
   executable: pip3.11
 
