@@ -39,6 +39,11 @@
     name: mysql-server
     state: present
 
+- name: Installing pre-req package for schema injection
+  ansible.builtin.package:
+    name: PyMySQL
+    state: present
+
 - name: Generating {{ component }} artifacts
   community.general.npm:
     path: "{{ app_dir }}"
