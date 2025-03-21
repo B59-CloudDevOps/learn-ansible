@@ -7,22 +7,12 @@
   ansible.builtin.template:
     src: expense.conf
     dest: "{{ proxy_path }}"
-
-- name: Cleanup of {{ component }} directory
-  ansible.builtin.file:
-    path: "{{ app_dir }}"
-    state: absent
-
-- name: Creating html dir for {{ component }}
-  ansible.builtin.file:
-    path: "{{ app_dir }}"
-    state: directory
-
-- name: Download & extracting {{ component }} code
-  ansible.builtin.unarchive:
-    src: "{{ url }}"
-    dest: "{{ app_dir }}"
-    remote_src: yes
+    
+# Importing a specific task from common role
+- name: Run tasks/other.yaml instead of 'main'
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: pre-req
 
 - name: Restarting {{ component }} service
   ansible.builtin.service:

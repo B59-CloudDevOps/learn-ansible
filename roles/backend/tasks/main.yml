@@ -15,21 +15,11 @@
     src: backend.service
     dest: /etc/systemd/system/backend.service
 
-- name: Delting the old {{ component }} directory
-  ansible.builtin.file:
-    path: "{{ app_dir }}"
-    state: absent 
-
-- name: Creating App Directoru
-  ansible.builtin.file:
-    path: "{{ app_dir }}"
-    state: directory 
-
-- name: Download & extracting {{ component }} code
-  ansible.builtin.unarchive:
-    src: "{{ url }}"
-    dest: "{{ app_dir }}"
-    remote_src: yes
+# Importing a specific task from common role
+- name: Run tasks/other.yaml instead of 'main'
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: pre-req
 
 - name: Installing mysql client
   ansible.builtin.dnf:
