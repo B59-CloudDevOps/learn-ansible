@@ -1,7 +1,7 @@
 - name: Configuring hostname
-  ansible.builtin.shell: set-hostname {{ component }}
+  ansible.builtin.shell: set-hostname {{ component }}-{{ env }}
 
-- name: Installing {{ compomnent }}
+- name: Installing {{ compomnent }}-{{ env }}
   ansible.builtin.package:
     name: mysql-server
     state: present

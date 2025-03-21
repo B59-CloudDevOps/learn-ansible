@@ -1,5 +1,5 @@
 - name: Configuring hostname
-  ansible.builtin.shell: set-hostname {{ component }}
+  ansible.builtin.shell: set-hostname {{ component }}-{{ env }}
 
 - name: Installing nginx
   ansible.builtin.package:
@@ -7,7 +7,7 @@
     state: present
 
 - name: copying nginx proxy file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: expense.conf
     dest: "{{ proxy_path }}"
 
