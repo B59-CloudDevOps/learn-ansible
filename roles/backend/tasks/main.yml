@@ -13,7 +13,7 @@
   ansible.builtin.user:
     name: "{{ appuser }}"
 
-- name: Copy a {{ component }} systemd file 
+- name: Copying {{ component }} systemd file 
   ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
@@ -55,7 +55,7 @@
     name: all
     state: import
     target: /app/schema/backend.sql 
-    login_host: 172.31.38.24
+    login_host: mysql-{{ env }}.clouding-app.shop
     login_user: root
     login_password: ExpenseApp@1
 
