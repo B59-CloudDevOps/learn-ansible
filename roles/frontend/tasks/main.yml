@@ -10,18 +10,18 @@
 
 - name: Cleanup of {{ component }} directory
   ansible.builtin.file:
-    path: "{{ component_path }}"
+    path: "{{ app_dir }}"
     state: absent
 
 - name: Creating html dir for {{ component }}
   ansible.builtin.file:
-    path: "{{ component_path }}"
+    path: "{{ app_dir }}"
     state: directory
 
 - name: Download & extracting {{ component }} code
   ansible.builtin.unarchive:
     src: "{{ url }}"
-    dest: "{{ component_path }}"
+    dest: "{{ app_dir }}"
     remote_src: yes
 
 - name: Restarting {{ component }} service
