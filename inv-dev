@@ -1,0 +1,8 @@
+[frontend]
+frontend-dev.clouding-app.shop
+
+[mysql]
+mysql-dev.clouding-app.shop
+
+[backend]
+backend-dev.clouding-app.shop
