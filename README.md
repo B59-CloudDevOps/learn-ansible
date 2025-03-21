@@ -112,3 +112,9 @@ With multi-environments, here is how we run the playbooks:
 ```
  $ ansible-playbook -i inv-dev  -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev -e component=mysql expense.yaml
 ```
+
+> What is role dependency in ansible ?
+
+    When we are calling a role - x and before the start of the role if you want y - role to be executed first then we can define that as a dependent role.
+
+    When you call something using role-dependency main.yml of that particular roles task will be executed first.
