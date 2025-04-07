@@ -43,7 +43,7 @@
     state: import
     target: /app/schema/backend.sql 
     login_host: mysql-{{ env }}.clouding-app.shop
-    login_user: root
+    login_user: "{{ secrets.MYSQL_USER }}"
     login_password: "{{ secrets.MYSQL_PASS }}"
 
 - name: Restarting {{ compomnent }} service
