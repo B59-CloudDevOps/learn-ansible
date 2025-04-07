@@ -44,7 +44,7 @@
     target: /app/schema/backend.sql 
     login_host: mysql-{{ env }}.clouding-app.shop
     login_user: root
-    login_password: ExpenseApp@1
+    login_password: "{{ secrets.mysql_root_password }}"
 
 - name: Restarting {{ compomnent }} service
   ansible.builtin.systemd_service:
