@@ -5,3 +5,8 @@
   ansible.builtin.pip:
     name: hvac
     executable: pip3.11 
+  
+- name: Configuring node exporter
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: node_exporter
