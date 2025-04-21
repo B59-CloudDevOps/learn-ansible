@@ -10,10 +10,16 @@
   ansible.builtin.user:
     name: "{{ appuser }}"
 
-- name: Installing NR Dependencies
-  community.general.npm: 
+# - name: Installing NR Dependencies
+#   community.general.npm: 
+#     name: newrelic
+#     path: "{{ app_dir }}"
+
+- name: Download NewRelic Dependencies
+  community.general.npm:
     name: newrelic
-    path: "{{ app_dir }}"
+    path: /app
+  become_user: "{{ appuser }}"
 
 - name: Copying {{ component }} systemd file 
   ansible.builtin.template:
