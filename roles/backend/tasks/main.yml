@@ -6,15 +6,15 @@
     name: nodejs
     state: present
 
-- name: Installing NR
-  ansible.builtin.shell: npm install newrelic --save
-  args:
-    chdir: "{{ app_dir }}"
-
-
 - name: Creating {{ appuser }} app user
   ansible.builtin.user:
     name: "{{ appuser }}"
+
+- name: Installing NR Dependencies
+  community.general.npm: 
+    name: newrelic
+    path: "{{ app_dir }}"
+  become_user: "{{ appuser }}"
 
 - name: Copying {{ component }} systemd file 
   ansible.builtin.template:
