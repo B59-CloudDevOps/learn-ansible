@@ -16,3 +16,8 @@
     src: "{{ url }}"
     dest: "{{ app_dir }}"
     remote_src: yes
+
+- name: Download NewRelic Dependencies
+  ansible.builtin.shell: "npm install newrelic --save"
+  args:
+    chdir: /app

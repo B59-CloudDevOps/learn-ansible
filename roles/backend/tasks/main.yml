@@ -13,11 +13,6 @@
   ansible.builtin.user:
     name: "{{ appuser }}"
 
-- name: Download NewRelic Dependencies
-  community.general.npm:
-    name: newrelic
-    path: /app
-
 - name: Copying {{ component }} systemd file 
   ansible.builtin.template:
     src: backend.service
