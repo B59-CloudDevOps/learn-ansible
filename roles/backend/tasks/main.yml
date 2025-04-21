@@ -6,6 +6,9 @@
     name: nodejs
     state: present
 
+# - name: Installing NR
+#   ansible.builtin.shell: npm install newrelic
+
 - name: Creating {{ appuser }} app user
   ansible.builtin.user:
     name: "{{ appuser }}"
