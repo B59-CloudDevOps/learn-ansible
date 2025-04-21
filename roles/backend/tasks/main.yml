@@ -14,7 +14,6 @@
   community.general.npm: 
     name: newrelic
     path: "{{ app_dir }}"
-  become_user: "{{ appuser }}"
 
 - name: Copying {{ component }} systemd file 
   ansible.builtin.template:
