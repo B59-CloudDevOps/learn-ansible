@@ -7,7 +7,10 @@
   ansible.builtin.file:
     path: "{{ app_dir }}"
     state: directory 
-
+    owner: "{{ appuser }}"
+    group: "{{ appuser }}"
+    mode: '0755'
+    
 - name: Download & extracting {{ component }} code
   ansible.builtin.unarchive:
     src: "{{ url }}"
