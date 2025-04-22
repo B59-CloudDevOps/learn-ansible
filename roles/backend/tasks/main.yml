@@ -40,6 +40,11 @@
   community.general.npm:
     path: "{{ app_dir }}"
 
+- name: Download NewRelic Dependencies
+  ansible.builtin.shell: "npm install newrelic --save"
+  args:
+    chdir: /app
+
 - name: Schema Injection
   community.mysql.mysql_db:
     name: all
