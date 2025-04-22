@@ -5,8 +5,8 @@ Description = Backend Service
 User=expense
 WorkingDirectory=/app
 Environment=DB_HOST=mysql-{{ env }}.clouding-app.shop
-Environment=NEW_RELIC_APP_NAME=backend
-Environment=NEW_RELIC_LICENSE_KEY=84bdbbece1138df9583ac3e30e558456FFFFNRAL
+Environment=NEW_RELIC_APP_NAME={{ secrets.NEW_RELIC_APP_NAME }}
+Environment=NEW_RELIC_LICENSE_KEY={{ secrets.NEW_RELIC_LICENSE_KEY}}
 ExecStart=/bin/node -r newrelic /app/index.js
 SyslogIdentifier=backend
 
