@@ -4,4 +4,4 @@ app_dir: "/app"
 url: "https://expense-web-app.s3.amazonaws.com/backend.zip"
 secrets: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=expense-{{ env }}/data/backend token={{ token }} url=https://vault.clouding-app.shop:8200  validate_certs=False') }}"
 install_filebeat: true
-log_path: "/var/log/backend.log"
+log_path: /var/log/backend.log
