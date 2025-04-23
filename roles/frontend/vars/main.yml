@@ -4,3 +4,4 @@ app_dir: "/usr/share/nginx/html"
 proxy_path: "/etc/nginx/default.d/expense.conf"
 appuser: root
 install_filebeat: true
+log_path: "/var/log/nginx/access.log"
