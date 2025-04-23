@@ -54,6 +54,17 @@
     login_user: "{{ secrets.MYSQL_USER }}"
     login_password: "{{ secrets.MYSQL_PASS }}"
 
+- name: Copying rsyslog config
+  ansible.builtin.template:
+    src: backend.conf
+    dest: /etc/rsyslog.d/backend.conf
+
+- name: Restarting rsyslog
+  ansible.builtin.systemd_service:
+    name: rsyslog
+    state: restarted
+    daemon_reload: true
+
 - name: Restarting {{ compomnent }} service
   ansible.builtin.systemd_service:
     name: backend
