@@ -12,6 +12,6 @@
     tasks_from: node_exporter
 
 - name: Installing Filebeat
-  ansible.builtin.include_role:
+  ansible.builtin.import_role:
     name: filebeat
   when: install_filebeat
